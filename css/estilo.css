@@ -96,19 +96,19 @@ body {
     align-items: center;
 }
 
-.btn-preguntas {
+.btn-apadrina {
     background-color: #5ad064;
     color: white;
     border: none;
     padding: 12px 25px;
     border-radius: 12px;
-    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 14px;
+    font-family: 'SFCompactRoundedBold';
 }
 
-.btn-preguntas:hover {
+.btn-apadrina:hover {
     background-color: #00cf11;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(3, 2, 19, 0.3);
