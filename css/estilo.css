@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +10,7 @@ body {
 .navbar {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    padding: 6px 20px;
     position:fixed;
     top: 0;
     left: 0;
@@ -35,8 +30,8 @@ body {
 /* Logo */
 .nav-logo h1 {
     font-size: 20px;
-    font-weight: 600;
-    color: #030213;
+    font-weight: 700;
+    color: #9aa199;
     margin: 0;
 }
 
@@ -102,3 +97,18 @@ body {
 }
 
 
+/* para las imagenes del menu */
+.single-item {
+    width: 100vw; /* 100% del ancho del viewport */
+    margin-left: 50%; /* Mueve el inicio al centro */
+    transform: translateX(-50%); /* Corrige la posición */
+    height: 650px;
+    overflow: hidden; /* Oculta cualquier exceso */
+}
+
+.single-item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
