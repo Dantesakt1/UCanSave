@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/*nav principal */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-nav {
+    max-width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.nav-logo h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #030213;
+    margin: 0;
+}
+
+#logo {
+    display: flex;          /* imagen + el texto en fila horizontal */
+    align-items: center;    /* para centrado vertical */
+    gap: 5px;               /* espacio entre img y texto */
+}
+
+#logo img {
+    height: 60px;   /* tamaño fijo de la imagen */
+    width: auto;    /* mantiene proporción */
+}
+
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-item {
+    position:relative; /*para los items estén bn alineados*/
+}
+
+/*esto para q los items se vean de color negro*/
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.nav-link:hover {
+    text-shadow: 0px 0px 5px #00000061;
+    transform: translateY(-1px);
+}
+
+/*boton del nav */
+.nav-btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn-preguntas {
+    background-color: #5ad064;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-preguntas:hover {
+    background-color: #00cf11;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(3, 2, 19, 0.3);
+}
+
+
