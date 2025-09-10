@@ -1,6 +1,23 @@
+/*esto es para el font q le pusimos extra*/
+@font-face {
+    font-family: 'SFCompactRounded';
+    src: url('../fonts/SF-Compact-Rounded-Regular.otf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+    font-display: swap; /* Mejora rendimiento */
+}
+@font-face {
+    font-family: 'SFCompactRoundedBold';
+    src: url('../fonts/SF-Compact-Rounded-Bold.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'SFCompactRounded', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
@@ -29,9 +46,10 @@ body {
 
 /* Logo */
 .nav-logo h1 {
+    font-family: 'SFCompactRoundedBold';
     font-size: 20px;
     font-weight: 700;
-    color: #9aa199;
+    color: #3a3a3a;
     margin: 0;
 }
 
