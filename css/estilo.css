@@ -14,15 +14,6 @@
     font-display: swap;
 }
 
-
-
-body {
-    font-family: 'SFCompactRounded', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
-}
-
 /*nav principal */
 .navbar {
     background-color: #ffffff;
@@ -185,3 +176,36 @@ body {
     font-size: 1.1em;
 }
 
+
+
+/*ESTRUCTURA DE TODO*/
+html, body {
+    height: 100%; /* Necesario para el flex */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    font-family: 'SFCompactRounded', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* MAIN ocupa el espacio restante */
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+    padding-top: 80px; /* Compensa el navbar fixed */
+}
+
+/* FOOTER siempre abajo */
+footer {
+    text-align: center;
+    padding: 20px 20px;
+    background: #2c7a7b;
+    color: white;
+    margin-top: auto; /* Se asegura que esté abajo */
+}
