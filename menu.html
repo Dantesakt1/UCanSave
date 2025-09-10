@@ -39,7 +39,7 @@
                 
                 <!-- BOTON -->
                 <div class="nav-btn">
-                    <button href="apadrinamiento.html" class="btn-apadrina">Apadrina</button>
+                    <a href="apadrinamiento.html" class="btn-apadrina">Apadrina</a>
                 </div>
             </div>
         </nav>
@@ -54,6 +54,31 @@
             <div><img src="img/imagen-menu3.jpg" alt="Slide 3"></div>
             <div><img src="img/imagen-menu4.jpg" alt="Slide 4"></div>
             <div><img src="img/imagen-menu5.jpg" alt="Slide 5"></div>            
+        </div>
+
+        <div class="contenedor-nosotros">
+            <div>
+                <h1>Sobre nosotros</h1>
+                <h4>U Can Save comenzó como una simple idea entre dos ingenieros informáticos, que decidimos que 
+                    nuestras habilidades podían tener un impacto más allá del mundo digital.</h4>
+                <h2>Puentes hacia la conservación</h2>
+                <h3>Santuarios verificados</h3>
+                <h4>Registramos y verificamos santuarios que muestran sus animales más 
+                    vulnerables, dando visibilidad a quienes trabajan en primera línea 
+                    por la conservación.</h4>
+                <h3>Apadrinamiento directo</h3>
+                <h4>Las personas pueden apadrinar un animal específico o hacer donaciones generales, 
+                    estableciendo un vínculo personal con cada especie y apoyando directamente su 
+                    cuidado.</h4>
+                <h3>Alianzas estratégicas</h3>
+                <h4>Trabajamos con fundaciones establecidas optimizando sus sistemas de ayuda, 
+                    creando redes colaborativas que maximizan el impacto de cada recurso donado.</h4>
+            </div>
+
+            <div class="fade">
+                <div><img src="img/animal-1.png" alt="Slide 1"></div>
+                <div><img src="img/animal-2.jpg" alt="Slide 2"></div>        
+            </div>
         </div>
     </main>
 
@@ -72,6 +97,14 @@
                 arrows: true,         // Muestra flechas
                 autoplay: true,       // Auto-play
                 autoplaySpeed: 3000   // 3 segundos
+            });
+
+            $('.fade').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
             });
         });
     </script>
