@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/apadrinamiento.css">
+</head>
+<body onload="cargarInicial()">
+
+    <header>
+        <nav class="navbar">
+            <div class="contenedor-nav">
+
+                <div class="nav-logo" id="logo">
+                    <img src="img/logo.png" alt="logo">
+                    <h1>U Can Save</h1>
+                </div>
+                
+                <!-- nav links -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html#sobre_nosotros" class="nav-link">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="carrito.html" class="nav-link">Carrito</a>
+                    </li>
+                </ul>
+                
+                <!-- BOTON -->
+                <div class="nav-btn">
+                    <a href="apadrinamiento.html" class="btn-apadrina">Apadrina</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <main>
+        <section>
+            <h1>Carrito de Compras</h1>
+            <div id="detalle"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 U Can Save - Proyecto Fullstack II</p>
+    </footer>
+
+    <script>
+             
+        var carrito=JSON.parse(localStorage.getItem("carrito"))         
+
+        function eliminar(indice){
+            if(confirm("¿Desea Eliminar Registro?")){
+                console.log(indice)
+                carrito.splice(indice,1)
+                console.log("Elimine reg")
+                localStorage.setItem("carrito",JSON.stringify(carrito))
+                cargarInicial()    
+            }
+        }
+
+        function cargarInicial(){
+            var tabla="<table border=1>"   
+                tabla=tabla+"<tr>"
+                tabla=tabla+"<td>Codigo</td> <td>Nombre</td>"
+                tabla=tabla+"<td>Precio</td> <td>Cantidad</td> <td>Total</td> <td>Imagen</td>"
+                tabla=tabla+"<td>Operacion</td>"   
+                tabla=tabla+"</tr>" 
+                let pos=0  
+                carrito.forEach(i=>{
+                    tabla=tabla+"<tr>"
+                    tabla=tabla+"<td>"+i.id+"</td>"
+                    tabla=tabla+"<td>"+i.nombre+"</td>"
+                    tabla=tabla+"<td>"+i.precio+"</td>"
+                    tabla=tabla+"<td>"+i.cantidad+"</td>" 
+                    tabla=tabla+"<td>"+i.total+"</td>"
+                    tabla=tabla+"<td> <img src='"+i.imagen+"' width=150px height=100px></td>"
+                    tabla=tabla+"<td> <input type='button' value='Eliminar' onclick='eliminar("+pos+")'></td>"
+                    tabla=tabla+"</tr>"   
+                    pos=pos+1
+                })                     
+                tabla=tabla+"</table>"
+                
+                document.getElementById("detalle").innerHTML=tabla     
+        }
+    </script>
+
+
+</body>
+</html>
