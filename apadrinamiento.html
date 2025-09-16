@@ -54,6 +54,7 @@
                     <p> Especie: Lama guanicoe <br> <br> Ungulado andino clave en los ecosistemas de altura.</p>
                     <p>⚠️ En peligro: Caza furtiva y pérdida de hábitat.</p>
                     <p>Fue Rescatada tras ser encontrada herida por un ataque de perros en una zona rural.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(1)">
                 </div>
 
                 <!-- 2 -->
@@ -64,6 +65,7 @@
                     <p> Especie: Athene cunicularia <br> <br> Búho terrestre que habita en madrigueras y es activo de día.</p>
                     <p>⚠️ En peligro: Destrucción de suelos y madrigueras por agricultura.</p>
                     <p>Llegó Trasladado por CONAF luego de que su madriguera fuese destruida por maquinaria</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(2)">
                 </div>
 
                 <!-- 3 -->
@@ -79,6 +81,7 @@
                     </p>
                     <p>⚠️ En peligro: Perseguido por creencias y caza por su piel.</p>
                     <p>Rescatado de una familia que lo mantenía como mascota ilegal.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(3)">
                 </div>
 
                 <!-- 4 -->
@@ -94,6 +97,7 @@
                     </p>
                     <p>⚠️ En peligro: Conflictos con humanos y reducción de hábitat.</p>
                     <p>Encontrado cachorro tras la caza de su madre por proteger ganado.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(4)">
                 </div>
 
                 <!-- 5 -->
@@ -109,6 +113,7 @@
                     </p>
                     <p>⚠️ En peligro: Tráfico ilegal de fauna y pérdida de hábitats.</p>
                     <p>Incautado en un operativo contra cetrería ilegal en el norte de Chile.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(5)">
                 </div>
 
                 <!-- 6 -->
@@ -124,6 +129,7 @@
                     </p>
                     <p>⚠️ En peligro: Captura incidental en redes de pesca.</p>
                     <p>Encontrada enmallada en una red abandonada, sobrevivió gracias al rescate.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(6)">
                 </div>
 
                 <!-- 7 -->
@@ -139,6 +145,7 @@
                     </p>
                     <p>⚠️ En peligro: Cambio climático y contaminación acústica en mares polares.</p>
                     <p>Trasladada a un centro de rehabilitación luego de varar debilitada en aguas frías del sur.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(7)">
                 </div>
 
                 <!-- 8 -->
@@ -154,6 +161,7 @@
                     </p>
                     <p>⚠️ En peligro: Derretimiento del hielo ártico y caza históric</p>
                     <p>Rescatado tras quedar atrapado en aguas poco profundas debido al retroceso del hielo.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(8)">
                 </div>
 
 
@@ -170,11 +178,12 @@
                     </p>
                     <p>⚠️ En peligro: Sobrepesca de anchovetas y pérdida de lugares de anidación.</p>
                     <p>Encontrado cubierto de petróleo tras un derrame cerca de la costa.</p>
+                    <input type="button" value="Agregar" onclick="agregarAnimal(9)">
                 </div>
-                
-                
-
             </div>
+        </section>
+        <section class="carrito">
+            Carrito: <label id="pie">0</label>
         </section>
     </main>
 
@@ -192,11 +201,42 @@
             new Animal(4,"Huilo",5000),
             new Animal(5,"Terra",5000),
             new Animal(6,"Luna",5000),
-            new Animal(4,"",5000),
-            new Animal(4,"",5000),
-            new Animal(4,"",5000),
-
+            new Animal(7,"Nieve",5000),
+            new Animal(8,"Spike",5000),
+            new Animal(9,"Chilly",5000)
         ]
+
+        localStorage.setItem("animales",JSON.stringify(animales));
+
+        function agregarAnimal(id){
+            console.log("Selecciono:"+id);
+            const data=JSON.parse(localStorage.getItem("animales"));
+            
+            //recorrer el arreglo
+            console.log(data[id-1]);
+            console.log(data[id-1]["nombre"]);
+            let nombre_animal=data[id-1]["nombre"];
+            var valor=parseInt(document.getElementById("pie").innerHTML); //lo convierte en un numero
+            valor=valor+1;
+            console.log(valor);
+            document.getElementById("pie").innerHTML=valor;
+
+            var carrito=JSON.parse(localStorage.getItem("carrito"));
+
+            if(!carrito){
+                console.log("no existe")
+                carrito=[
+                    data[id-1],
+                ]
+                localStorage.setItem("carrito",JSON.stringify(carrito))
+                console.log("Apadrinamiento agregado")
+            }else{
+                console.log("existe")
+                carrito.push(data[id-1])
+                localStorage.setItem("carrito",JSON.stringify(carrito))
+                console.log("Apadrinamiento agregado")
+            }
+        }
     </script>
 </body>
 </html>
