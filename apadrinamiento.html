@@ -252,9 +252,7 @@
                 console.log("no existe");
                 carrito=[ animalCarro ];
                 items=1;
-                subtotal=animalCarro.precio;
-                iva=subtotal*0.19;
-                total=subtotal+iva;
+                total=animalCarro.precio;
                 localStorage.setItem("carrito",JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
             }else{
@@ -263,8 +261,8 @@
         
                 carrito.forEach(item =>{
                     if(item.id==animalCarro.id){
-                        let cant=item.cantidad+1
-                        let totalItem = item.precio*cant
+                        let cant=items.cantidad+1
+                        let totalItem = items.precio*cant
                         carrito[pos]["cantidad"] = cant
                         carrito[pos]["total"] = totalItem
                         existe=1
@@ -277,10 +275,8 @@
                 }
         
                 carrito.forEach(i=>{
-                    total += item.precio * item.cantidad               
+                    total += items.precio * items.cantidad              
                 })
-                iva=subtotal*0.19
-                total=subtotal+iva
                 items=carrito.length
                 localStorage.setItem("carrito",JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
