@@ -59,6 +59,11 @@ nav button:hover {
     padding: 15px;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
     text-align: center;
+
+        /* para ajustar el boton */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .animal {
@@ -78,17 +83,51 @@ nav button:hover {
     margin-bottom: 10px;
 }
 
-.ficha button {
-    background: #2b6cb0;
+/* Botones "Agregar" */
+.ficha input[type="button"] {
+    background: linear-gradient(135deg, #44b699, #068d70);
     color: white;
+    margin-top: auto; /* fuerza a ir al final */
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.15);
 }
 
-.ficha button:hover {
-    background: #2c5282;
+.ficha input[type="button"]:hover {
+    background: linear-gradient(135deg, #0f7564, #075541);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
+}
+
+
+/* sección carrito */
+.carrito {
+    margin: 30px auto;
+    width: 80%;
+    max-width: 500px;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c7a7b;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.carrito label {
+    background: #44b699;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 16px;
 }
 
 /* Footer */
