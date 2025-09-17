@@ -14,6 +14,7 @@
     font-display: swap;
 }
 
+
 /*nav principal */
 .navbar {
     background-color: #ffffff;
@@ -123,64 +124,117 @@
     object-position: center;
 }
 
-/*sobre nosotros*/
+/*para el carrousel*/
 
-.fade {
-    width: 100%;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden; /* Importante para que el border-radius funcione */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+#escena {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 900px;
+  height: 400px;
+  margin: 80px auto;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
 }
 
-.fade img {
-    width: 100% !important;       /* Ocupa todo el ancho */
-    height: 100% !important;      /* Ocupa toda la altura */
-    object-fit: cover;            /* Cubre el contenedor sin distorsionar */
-    object-position: center;      /* Centra la imagen */
+#zona-izquierda {
+  background: #fff;
+  height: 75%;
+  width: 300px;
+  display: flex;
+  align-items: center;
 }
 
-/* MEJORA el contenedor principal */
-.contenedor-nosotros {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px; /* Aumenté el espacio entre columnas */
-    max-width: 1200px;
-    margin: 100px auto; /* Aumenté el margen superior/inferior */
-    padding: 0 40px; /* Aumenté el padding lateral */
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.contenedor-nosotros > div {
-    flex: 1;
+.item input[type="radio"] {
+  display: none;
 }
 
-/* Estilos para el texto - mejora espaciado */
-.contenedor-nosotros h1 {
-    margin-bottom: 25px;
-    font-size: 2.8em;
+.item label {
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'SFCompactRoundedBold';
 }
 
-.contenedor-nosotros h2 {
-    margin: 35px 0 25px 0;
-    font-size: 1.9em;
+.item label:hover {
+  opacity: 0.8;
 }
 
-.contenedor-nosotros h3 {
-    margin: 25px 0 12px 0;
-    font-size: 1.4em;
+.item .contenido {
+  position: absolute;
+  left: 300px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: auto;   /* ya no fuerzas altura */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.6s ease;
+  opacity: 0;
 }
 
-.contenedor-nosotros h4 {
-    margin-bottom: 20px;
-    line-height: 1.7;
-    font-size: 1.1em;
+.item .contenido h1 {
+  color: #2c7a7b;
+  margin-bottom: 15px;
+  font-family: 'SFCompactRoundedBold';
 }
 
+.item .contenido p {
+  max-width: 70%;
+}
 
+.item input[type="radio"]:checked ~ label {
+  opacity: 1;
+  color: #2c7a7b;
+  border-right: 4px solid #2c7a7b;
+}
+
+.item input[type="radio"]:checked ~ .contenido {
+  opacity: 1;
+}
+
+#borde-medio {
+  background-color: #eee;
+  height: 75%;
+  width: 2px;
+}
+
+#zona-derecha {
+  flex-grow: 1;
+  background: #fff;
+}
+
+/* el bloque de iconos dentro del carrusel */
+.contenido .icono img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: cover; /* mantiene proporción y recorta si es necesario */
+}
 
 /*ESTRUCTURA DE TODO*/
 html, body {
-    height: 100%; /* Necesario para el flex */
+    height: 100%; /* necesario para el flex */
     margin: 0;
     padding: 0;
 }
@@ -188,24 +242,22 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    min-height: 100vh; /* ocupa toda la altura de la ventana */
     font-family: 'SFCompactRounded', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
 }
 
-/* MAIN ocupa el espacio restante */
 main {
-    flex: 1; /* Empuja el footer hacia abajo */
-    padding-top: 80px; /* Compensa el navbar fixed */
+    flex: 1; /* empuja el footer hacia abajo */
+    padding-top: 80px; /* compensa el navbar fixed */
 }
 
-/* FOOTER siempre abajo */
 footer {
     text-align: center;
     padding: 20px 20px;
     background: #2c7a7b;
     color: white;
-    margin-top: auto; /* Se asegura que esté abajo */
+    margin-top: auto; /* se asegura que esté abajo */
 }

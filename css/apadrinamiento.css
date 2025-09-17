@@ -1,42 +1,4 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ddd;
-}
-
-header h1 {
-    color: #2c7a7b;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-nav button {
-    background: #38a169;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav button:hover {
-    background: #2f855a;
-}
+@import url(estilo.css);
 
 /* Galería */
 .galeria {
@@ -130,11 +92,4 @@ nav button:hover {
     font-size: 16px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #2c7a7b;
-    color: white;
-    margin-top: 20px;
-}
+
