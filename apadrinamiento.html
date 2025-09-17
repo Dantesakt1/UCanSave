@@ -190,8 +190,6 @@
             Carrito: <label id="pie">0</label>
             <br>
             Items: <span id="items">0</span><br>
-            Subtotal: $<span id="subtotal">0</span><br>
-            IVA: $<span id="iva">0</span><br>
             Total: $<span id="total">0</span>
         </section>
     </main>
@@ -242,8 +240,6 @@
             document.getElementById("pie").innerHTML=valor;
         
             let items=0;
-            let subtotal=0;
-            let iva=0;
             let total=0;
         
             var carrito=JSON.parse(localStorage.getItem("carrito"));
@@ -256,34 +252,29 @@
                 localStorage.setItem("carrito",JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
             }else{
-                let pos=0;
-                let existe=0;
-        
-                carrito.forEach(item =>{
+                let existe=false;
+                carrito.forEach((item,idx) =>{
                     if(item.id==animalCarro.id){
-                        let cant=items.cantidad+1
-                        let totalItem = items.precio*cant
-                        carrito[pos]["cantidad"] = cant
-                        carrito[pos]["total"] = totalItem
-                        existe=1
+                        carrito[idx].cantidad += 1;
+                        carrito[idx].total = carrito[idx].precio * carrito[idx].cantidad;
+                        existe= true;
                     }
-                    pos=pos+1;
                 });
         
-                if(existe==0){
+                if(!existe){
                     carrito.push(animalCarro)
                 }
         
                 carrito.forEach(i=>{
-                    total += items.precio * items.cantidad              
+                    total += i.total;            
                 })
                 items=carrito.length
                 localStorage.setItem("carrito",JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
             }
             
-            document.getElementById("items").innerHTML=items
-            document.getElementById("total").innerHTML=total
+            document.getElementById("items").innerHTML=items;
+            document.getElementById("total").innerHTML=total;
         }
         
     </script>
