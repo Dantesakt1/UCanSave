@@ -1,4 +1,6 @@
+/* Elimina estos imports: */
 @import url(apadrinamiento.css);
+/* @import url(carrito.css); */
 
 
 /*esto es para el font q le pusimos extra*/
@@ -89,6 +91,7 @@
 .nav-btn {
     display: flex;
     align-items: center;
+    gap: 12px; /* espacio entre los dos botones */
 }
 
 .btn-apadrina {
@@ -106,6 +109,26 @@
 
 .btn-apadrina:hover {
     background-color: #075541;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(3, 2, 19, 0.3);
+}
+
+.btn-login_register {
+    color: #44b699;
+    border: 2px solid #44b699;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-family: 'SFCompactRoundedBold';
+    text-decoration: none;
+}
+
+.btn-login_register:hover {
+    background-color: #44b699;
+    color: white;
+    border: 2px solid white;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(3, 2, 19, 0.3);
 }
