@@ -92,7 +92,7 @@
 }
 
 .btn-apadrina {
-    background-color: #5ad064;
+    background-color: #44b699;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -105,7 +105,7 @@
 }
 
 .btn-apadrina:hover {
-    background-color: #00cf11;
+    background-color: #075541;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(3, 2, 19, 0.3);
 }
@@ -113,9 +113,7 @@
 
 /* para las imagenes del menu */
 .single-item {
-    width: 100vw; /* 100% del ancho del viewport */
-    margin-left: 50%; /* Mueve el inicio al centro */
-    transform: translateX(-50%); /* Corrige la posición */
+    width: 100%; /* Cambiado de 100vw */
     height: 650px;
     overflow: hidden; /* Oculta cualquier exceso */
 }
@@ -235,7 +233,7 @@
   object-fit: cover; /* mantiene proporción y recorta si es necesario */
 }
 
-/* Contexto y formulario juntos */
+/* contexto y formulario */
 .seccion-postulacion {
     max-width: 900px;
     margin: 40px auto 40px auto;
@@ -256,6 +254,12 @@
     color: #333;
     font-size: 17px;
     margin-bottom: 0;
+}
+
+.seccion-postulacion hr {
+    border: none;
+    border-top: 2px solid #2c7a7b;
+    margin: 30px 0;
 }
 
 /* Formulario de postulación */
@@ -349,4 +353,5 @@ footer {
     color: white;
     margin-top: auto; /* se asegura que esté abajo */
 }
+
 
