@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Productos</title>
+    <title>Gestion animales</title>
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/menu_adm.css">
-    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/animales.css">
 </head>
 <body>
   <header>
@@ -14,7 +14,7 @@
       <h2><img src="img/logo.png" alt="logo" width="150" height="150"> </h2>
       <ul>
         <li><a href="menu_admin.html">Inicio</a></li>
-        <li><a href="admin_productos.html">Productos</a></li>
+        <li><a href="admin_animales.html">Animales</a></li>
         <li><a href="admin_usuarios.html">Usuarios</a></li>
       </ul>
       <hr>
@@ -25,12 +25,12 @@
   </header>
 
   <main class="contenido">
-    <h1>¡Productos!</h1>
-    <p>Aquí puedes administrar los productos</p>
-<!-- Botón para agregar un nuevo producto -->
-    <button onclick="abrirModal('modalAgregarProducto')">Agregar Producto</button>
+    <h1>¡Animales!</h1>
+    <p>Aquí puedes administrar los animales</p>
+<!-- Botón para agregar un nuevo animal -->
+    <button onclick="abrirModal('modalAgregarAnimal')">Agregar Animal</button>
 
-    <!-- Tabla de productos -->
+    <!-- Tabla con los animales -->
     <table>
         <tr>
             <th>Nombre</th>
@@ -45,7 +45,7 @@
             <td>Ungulado andino clave en los ecosistemas de altura.</td>
             <td>$5000</td>
             <td>
-                <button onclick="abrirModal('modalEditarProducto')">Editar</button>
+                <button onclick="abrirModal('modalEditarPAnimal')">Editar</button>
             </td>
         </tr>
         <tr>
@@ -54,14 +54,14 @@
             <td>Búho terrestre que habita en madrigueras y es activo de día.</td>
             <td>$5000</td>
             <td>
-                <button onclick="abrirModal('modalEditarProducto')">Editar</button>
+                <button onclick="abrirModal('modalEditarAnimal')">Editar</button>
             </td>
         </tr>
     </table>
 
-    <!-- Modal para agregar producto -->
-    <div id="modalAgregarProducto" class="modal">
-        <h2>Agregar Producto</h2>
+    <!-- Modal para agregar animales -->
+    <div id="modalAgregarAnimal" class="modal">
+        <h2>Agregar Animal</h2>
         <form>
             <!-- Campo para el nombre -->
             <label for="nombre">Nombre:</label>
@@ -80,14 +80,14 @@
             <input type="number" id="precio" placeholder="Ingrese el precio" required><br><br>
 
             <!-- Botones para cancelar o guardar -->
-            <button type="button" onclick="cerrarModal('modalAgregarProducto')">Cancelar</button>
+            <button type="button" onclick="cerrarModal('modalAgregarAnimal')">Cancelar</button>
             <button type="submit">Guardar</button>
         </form>
     </div>
 
-    <!-- Modal para editar producto -->
-    <div id="modalEditarProducto" class="modal">
-        <h2>Editar Producto</h2>
+    <!-- Modal para editar al animal -->
+    <div id="modalEditarAnimal" class="modal">
+        <h2>Editar Animal</h2>
         <form>
             <label for="editarNombre">Nombre:</label>
             <input type="text" id="editarNombre" value="Minga"><br><br>
@@ -97,7 +97,7 @@
             <textarea id="editarDescripcion">Ungulado andino clave en los ecosistemas de altura.</textarea><br><br>
             <label for="editarPrecio">Precio:</label>
             <input type="number" id="editarPrecio" value="5000"><br><br>
-            <button type="button" onclick="cerrarModal('modalEditarProducto')">Cancelar</button>
+            <button type="button" onclick="cerrarModal('modalEditarAnimal')">Cancelar</button>
             <button type="submit">Guardar</button>
         </form>
     </div>
