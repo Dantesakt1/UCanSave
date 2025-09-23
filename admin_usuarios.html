@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion usuarios</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/menu_adm.css">
+    <link rel="stylesheet" href="css/usuarios.css">
 </head>
 <body>
   <header>
@@ -25,6 +27,100 @@
   <main class="contenido">
     <h1>Usuarios</h1>
     <p>Aquí podrás administrar a los usuarios</p>
+
+    <!-- Botón para agregar un nuevo usuario -->
+    <button onclick="abrirModal('modalAgregarUsuario')">Agregar Usuario</button>
+
+    <!-- Tabla de usuarios -->
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+        <tr>
+            <td>Juan Pérez</td>
+            <td>juanperez@mail.com</td>
+            <td>+56 9 1111 1111</td>
+            <td>
+                <button onclick="abrirModal('modalEditarUsuario')">Editar</button>
+            </td>
+        </tr>
+        <tr>
+            <td>María López</td>
+            <td>marialopez@mail.com</td>
+            <td>+56 9 2222 2222</td>
+            <td>
+                <button onclick="abrirModal('modalEditarUsuario')">Editar</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Modal para agregar usuario -->
+    <div id="modalAgregarUsuario" class="modal">
+        <h2>Agregar Usuario</h2>
+        <form>
+            <!-- Campo para el nombre completo -->
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" placeholder="Ingrese el nombre completo" required><br><br>
+
+            <!-- Campo para el correo -->
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" placeholder="Ingrese el correo" required><br><br>
+
+            <!-- Campo para la contraseña -->
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" placeholder="Ingrese la contraseña" required><br><br>
+
+            <!-- Campo para repetir la contraseña -->
+            <label for="repetirContraseña">Repetir Contraseña:</label>
+            <input type="password" id="repetirContraseña" placeholder="Repita la contraseña" required><br><br>
+
+            <!-- Campo para el teléfono (opcional) -->
+            <label for="telefono">Teléfono (opcional):</label>
+            <input type="tel" id="telefono" placeholder="Ingrese el teléfono"><br><br>
+
+            <!-- Botones para cancelar o guardar -->
+            <button type="button" onclick="cerrarModal('modalAgregarUsuario')">Cancelar</button>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Modal para editar usuario -->
+    <div id="modalEditarUsuario" class="modal">
+        <h2>Editar Usuario</h2>
+        <form>
+            <label for="editarNombre">Nombre Completo:</label>
+            <input type="text" id="editarNombre" value="Juan Pérez"><br><br>
+            <label for="editarCorreo">Correo:</label>
+            <input type="email" id="editarCorreo" value="juanperez@mail.com"><br><br>
+            <label for="editarTelefono">Teléfono:</label>
+            <input type="tel" id="editarTelefono" value="+56 9 1111 1111"><br><br>
+            <button type="button" onclick="cerrarModal('modalEditarUsuario')">Cancelar</button>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Fondo oscuro -->
+    <div id="fondoOscuro" class="fondo-oscuro"></div>
+
+  </main>
+
+  <script>
+    // Función para abrir un modal
+    function abrirModal(idModal) {
+        document.getElementById(idModal).classList.add('active'); // Muestra el modal
+        document.getElementById('fondoOscuro').classList.add('active'); // Muestra el fondo oscuro
+    }
+
+    // Función para cerrar un modal
+    function cerrarModal(idModal) {
+        document.getElementById(idModal).classList.remove('active'); // Oculta el modal
+        document.getElementById('fondoOscuro').classList.remove('active'); // Oculta el fondo oscuro
+    }
+  </script>
+
   </main>
 </body>
 </html>
