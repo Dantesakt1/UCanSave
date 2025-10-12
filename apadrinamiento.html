@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/estilo.css">
 
 </head>
+
 <body>
 
     <header>
@@ -21,7 +23,7 @@
                     <img src="img/logo.png" alt="logo">
                     <h1>U Can Save</h1>
                 </div>
-                
+
                 <!-- nav links -->
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -33,8 +35,14 @@
                     <li class="nav-item">
                         <a href="carrito.html" class="nav-link">Carrito</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="noticias.html" class="nav-link">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="formulario.html" class="nav-link">Formulario</a>
+                    </li>
                 </ul>
-                
+
                 <!-- BOTON -->
                 <div class="nav-btn">
                     <a href="apadrinamiento.html" class="btn-apadrina">Apadrina</a>
@@ -50,7 +58,7 @@
         <section class="galeria">
             <h2>Apadrina algún animal !</h2>
             <div class="contenedor">
-                
+
                 <!-- 1 -->
                 <div class="ficha">
                     <img class="animal" src="img/Lama guanicoe.jpeg" alt="Lama guanicoe" width="200" height="150">
@@ -67,7 +75,8 @@
                     <img class="animal" src="img/Athene.jpg" alt="Athene cunicularia" width="200" height="150">
                     <h3>Rumi</h3>
                     <hr>
-                    <p> Especie: Athene cunicularia <br> <br> Búho terrestre que habita en madrigueras y es activo de día.</p>
+                    <p> Especie: Athene cunicularia <br> <br> Búho terrestre que habita en madrigueras y es activo de
+                        día.</p>
                     <p>⚠️ En peligro: Destrucción de suelos y madrigueras por agricultura.</p>
                     <p>Llegó Trasladado por CONAF luego de que su madriguera fuese destruida por maquinaria</p>
                     <input type="button" value="Agregar" onclick="agregarAnimal(2)">
@@ -127,7 +136,7 @@
                     <h3>Luna</h3>
                     <hr>
                     <p>
-                        Especie: Phocoena sinus 
+                        Especie: Phocoena sinus
                         <br>
                         <br>
                         La marsopa más pequeña del mundo, endémica del golfo de California.
@@ -143,7 +152,7 @@
                     <h3>Nieve</h3>
                     <hr>
                     <p>
-                        Especie: Delphinapterus leucas  
+                        Especie: Delphinapterus leucas
                         <br>
                         <br>
                         Cetáceo blanco del Ártico, muy social y comunicativo.
@@ -172,7 +181,8 @@
 
                 <!-- 9 -->
                 <div class="ficha">
-                    <img class="animal" src="img/Pingüino de Humboldt.webp" alt="Spheniscus humboldti" width="200" height="150">
+                    <img class="animal" src="img/Pingüino de Humboldt.webp" alt="Spheniscus humboldti" width="200"
+                        height="150">
                     <h3>Chilly</h3>
                     <hr>
                     <p>
@@ -203,81 +213,82 @@
     <script src="js/animal.js"></script>
     <script src="js/productoAnimal.js"></script>
     <script>
-        var animales=[
-            new Animal(1,"Minga",5000,"img/Lama guanicoe.jpeg"),
-            new Animal(2,"Rumi",5000,"img/Athene.jpg"),
-            new Animal(3,"Lycan",5000,"img/Lycalopex.jpg"),
-            new Animal(4,"Huilo",5000,"img/Puma concolor.jpg"),
-            new Animal(5,"Terra",5000,"img/Parabuteo.jpg"),
-            new Animal(6,"Luna",5000,"img/Phocoena.jpeg"),
-            new Animal(7,"Nieve",5000,"img/Beluga.jpg"),
-            new Animal(8,"Spike",5000,"img/Narval.jpg"),
-            new Animal(9,"Chilly",5000,"img/Pingüino de Humboldt.webp")
+        var animales = [
+            new Animal(1, "Minga", 5000, "img/Lama guanicoe.jpeg"),
+            new Animal(2, "Rumi", 5000, "img/Athene.jpg"),
+            new Animal(3, "Lycan", 5000, "img/Lycalopex.jpg"),
+            new Animal(4, "Huilo", 5000, "img/Puma concolor.jpg"),
+            new Animal(5, "Terra", 5000, "img/Parabuteo.jpg"),
+            new Animal(6, "Luna", 5000, "img/Phocoena.jpeg"),
+            new Animal(7, "Nieve", 5000, "img/Beluga.jpg"),
+            new Animal(8, "Spike", 5000, "img/Narval.jpg"),
+            new Animal(9, "Chilly", 5000, "img/Pingüino de Humboldt.webp")
         ]
 
-        localStorage.setItem("animales",JSON.stringify(animales));
+        localStorage.setItem("animales", JSON.stringify(animales));
 
-        function agregarAnimal(id){
-            console.log("Selecciono:"+id);
-            const data=JSON.parse(localStorage.getItem("animales"));
-        
-            console.log(data[id-1]);
-            console.log(data[id-1]["nombre"]);
+        function agregarAnimal(id) {
+            console.log("Selecciono:" + id);
+            const data = JSON.parse(localStorage.getItem("animales"));
+
+            console.log(data[id - 1]);
+            console.log(data[id - 1]["nombre"]);
 
             // Crear nuevo producto para el carrito
             var animalCarro = new ProductoAnimal()
-            animalCarro.id=data[id-1]["id"]
-            animalCarro.nombre=data[id-1]["nombre"]
-            animalCarro.precio=data[id-1]["precio"]
-            animalCarro.cantidad=1
-            animalCarro.total=data[id-1]["precio"]
-            animalCarro.imagen=data[id-1]["imagen"]
+            animalCarro.id = data[id - 1]["id"]
+            animalCarro.nombre = data[id - 1]["nombre"]
+            animalCarro.precio = data[id - 1]["precio"]
+            animalCarro.cantidad = 1
+            animalCarro.total = data[id - 1]["precio"]
+            animalCarro.imagen = data[id - 1]["imagen"]
 
-            let nombre_animal=data[id-1]["nombre"];
-        
+            let nombre_animal = data[id - 1]["nombre"];
+
             // contador arriba del carrito
-            var valor=parseInt(document.getElementById("pie").innerHTML);
-            valor=valor+1;
-            document.getElementById("pie").innerHTML=valor;
-        
-            let items=0;
-            let total=0;
-        
-            var carrito=JSON.parse(localStorage.getItem("carrito"));
-        
-            if(!carrito){
+            var valor = parseInt(document.getElementById("pie").innerHTML);
+            valor = valor + 1;
+            document.getElementById("pie").innerHTML = valor;
+
+            let items = 0;
+            let total = 0;
+
+            var carrito = JSON.parse(localStorage.getItem("carrito"));
+
+            if (!carrito) {
                 console.log("no existe");
-                carrito=[ animalCarro ];
-                items=1;
-                total=animalCarro.precio;
-                localStorage.setItem("carrito",JSON.stringify(carrito))
+                carrito = [animalCarro];
+                items = 1;
+                total = animalCarro.precio;
+                localStorage.setItem("carrito", JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
-            }else{
-                let existe=false;
-                carrito.forEach((item,idx) =>{
-                    if(item.id==animalCarro.id){
+            } else {
+                let existe = false;
+                carrito.forEach((item, idx) => {
+                    if (item.id == animalCarro.id) {
                         carrito[idx].cantidad += 1;
                         carrito[idx].total = carrito[idx].precio * carrito[idx].cantidad;
-                        existe= true;
+                        existe = true;
                     }
                 });
-        
-                if(!existe){
+
+                if (!existe) {
                     carrito.push(animalCarro)
                 }
-        
-                carrito.forEach(i=>{
-                    total += i.total;            
+
+                carrito.forEach(i => {
+                    total += i.total;
                 })
-                items=carrito.length
-                localStorage.setItem("carrito",JSON.stringify(carrito))
+                items = carrito.length
+                localStorage.setItem("carrito", JSON.stringify(carrito))
                 console.log("Apadrinamiento agregado")
             }
-            
-            document.getElementById("items").innerHTML=items;
-            document.getElementById("total").innerHTML=total;
+
+            document.getElementById("items").innerHTML = items;
+            document.getElementById("total").innerHTML = total;
         }
-        
+
     </script>
 </body>
+
 </html>
