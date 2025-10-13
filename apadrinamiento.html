@@ -212,20 +212,20 @@
 
     <script src="js/animal.js"></script>
     <script src="js/productoAnimal.js"></script>
-    <script>
-        var animales = [
-            new Animal(1, "Minga", 5000, "img/Lama guanicoe.jpeg"),
-            new Animal(2, "Rumi", 5000, "img/Athene.jpg"),
-            new Animal(3, "Lycan", 5000, "img/Lycalopex.jpg"),
-            new Animal(4, "Huilo", 5000, "img/Puma concolor.jpg"),
-            new Animal(5, "Terra", 5000, "img/Parabuteo.jpg"),
-            new Animal(6, "Luna", 5000, "img/Phocoena.jpeg"),
-            new Animal(7, "Nieve", 5000, "img/Beluga.jpg"),
-            new Animal(8, "Spike", 5000, "img/Narval.jpg"),
-            new Animal(9, "Chilly", 5000, "img/Pingüino de Humboldt.webp")
-        ]
+<script>
+    var animales = [
+        new Animal(1, "Minga", 5000, "img/Lama guanicoe.jpeg", "Lama guanicoe", "Ungulado andino clave en los ecosistemas de altura."),
+        new Animal(2, "Rumi", 5000, "img/Athene.jpg", "Athene cunicularia", "Búho terrestre que habita en madrigueras y es activo de día."),
+        new Animal(3, "Lycan", 5000, "img/Lycalopex.jpg", "Lycalopex griseus", "Cánido pequeño que ayuda a controlar plagas de roedores."),
+        new Animal(4, "Huilo", 5000, "img/Puma concolor.jpg", "Puma concolor", "Gran felino sudamericano, depredador tope en la cadena trófica."),
+        new Animal(5, "Terra", 5000, "img/Parabuteo.jpg", "Parabuteo unicinctus", "Ave rapaz social, poco común entre halcones, suele cazar en grupo."),
+        new Animal(6, "Luna", 5000, "img/Phocoena.jpeg", "Phocoena sinus", "La marsopa más pequeña del mundo, endémica del golfo de California."),
+        new Animal(7, "Nieve", 5000, "img/Beluga.jpg", "Delphinapterus leucas", "Cetáceo blanco del Ártico, muy social y comunicativo."),
+        new Animal(8, "Spike", 5000, "img/Narval.jpg", "Monodon monoceros", "Ballena dentada famosa por su largo colmillo en espiral."),
+        new Animal(9, "Chilly", 5000, "img/Pingüino de Humboldt.webp", "Spheniscus humboldti", "Pingüino costero del norte de Chile y Perú.")
+    ];
 
-        localStorage.setItem("animales", JSON.stringify(animales));
+    localStorage.setItem("animales", JSON.stringify(animales));
 
         function agregarAnimal(id) {
             console.log("Selecciono:" + id);

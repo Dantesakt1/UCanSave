@@ -65,4 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Registro exitoso.");
         }
     });
+
+
+
+    loginButton.addEventListener("click", () => {
+        const email = document.querySelector(".inicio-sesion input[type='text']").value;
+        const password = document.querySelector(".inicio-sesion input[type='password']").value;
+
+        // Credenciales de administrador (puedes reemplazar con datos dinámicos)
+        const adminEmail = "admin@ucansave.com";
+        const adminPassword = "admin123";
+
+        if (email === adminEmail && password === adminPassword) {
+            // Redirigir al menú de administrador
+            window.location.href = "menu_admin.html";
+        } else {
+            alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+        }
+    });
 });
