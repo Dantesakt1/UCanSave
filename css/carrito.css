@@ -89,3 +89,60 @@ input[type="button"]:hover {
     background-color: #b81e2a;
     transform: scale(1.08);
 }
+
+/* Botones para aumentar/disminuir cantidad */
+.btn-cantidad {
+    background-color: #2c7a7b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'SFCompactRoundedBold';
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-cantidad:hover {
+    background-color: #075541;
+    transform: scale(1.1);
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'SFCompactRoundedBold';
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-eliminar:hover {
+    background-color: #b81e2a;
+    transform: scale(1.08);
+}
+
+/* Botón comprar */
+.btn-comprar {
+    background-color: #2c7a7b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'SFCompactRoundedBold';
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn-comprar:hover {
+    background-color: #075541;
+    transform: scale(1.1);
+}
